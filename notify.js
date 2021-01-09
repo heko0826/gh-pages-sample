@@ -18,7 +18,7 @@ function notifyMe() {
       Notification.requestPermission().then(function (permission) {
         // ユーザーが許可したら、通知を作成しましょう
         if (permission === "granted") {
-          var notification = new Notification("こんにちは！");
+          var notification = new Notification(title=title,options=options);
         }
       });
     }
