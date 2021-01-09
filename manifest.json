@@ -1,6 +1,6 @@
 {
-    "short_name":"GHPages",
-    "name":"GitHubPages",
+    "short_name":"GHPages PWA",
+    "name":"GitHubPages PWA",
     "display":"standalone",
-    "start_url":"index.html"
+    "start_url":"/index.html?utm_source=homescreen"
 }
