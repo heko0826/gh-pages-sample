@@ -1,7 +1,7 @@
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
-    '/heko0826/gh-pages-sample.github.io/',
+    '/heko0826/mifumo.github.io/',
 ];
 
 // インストール処理
