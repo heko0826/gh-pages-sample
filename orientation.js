@@ -1,31 +1,27 @@
-var ball   = document.querySelector('.ball');
-var garden = document.querySelector('.garden');
-var output = document.querySelector('.output');
-
-var maxX = garden.clientWidth  - ball.clientWidth;
-var maxY = garden.clientHeight - ball.clientHeight;
-
-function handleOrientation(event) {
-  var x = event.beta;  // -180 から 180 の範囲で角度を示す
-  var y = event.gamma; // -90 から 90 の範囲で角度を示す
-
-  output.innerHTML  = "beta : " + x + "\n";
-  output.innerHTML += "gamma: " + y + "\n";
-
-  // デバイスをひっくり返したくはないため、
-  // x の値を -90 から 90 の範囲に制限する
-  if (x >  90) { x =  90};
-  if (x < -90) { x = -90};
-
-  // 計算を容易にするため、x および y の値の範囲を
-  // 0 から 180 に変換する
-  x += 90;
-  y += 90;
-
-  // 10 は、ボールのサイズの半分である。
-  // これにより、配置場所をボールの中心に合わせる
-  ball.style.top  = (maxX*x/180 - 10) + "px";
-  ball.style.left = (maxY*y/180 - 10) + "px";
+const requestDeviceOrientationPermission = () => {
+  if (
+    DeviceOrientationEvent &&
+    typeof DeviceOrientationEvent.requestPermission === 'function'
+  ) {
+    // iOS 13+ の Safari
+    // 許可を取得
+    DeviceOrientationEvent.requestPermission()
+    .then(permissionState => {
+      if (permissionState === 'granted') {
+        // 許可を得られた場合、deviceorientationをイベントリスナーに追加
+        window.addEventListener('deviceorientation', e => {
+          // deviceorientationのイベント処理
+        }）
+      } else {
+        // 許可を得られなかった場合の処理
+      }
+    })
+    .catch(console.error) // https通信でない場合などで許可を取得できなかった場合
+  } else {
+    // 上記以外のブラウザ
+  }
 }
 
-window.addEventListener('deviceorientation', handleOrientation,false);
+// ボタンクリックでrequestDeviceOrientationPermission実行
+const startButton = document.getElementById("start-button")
+startButton.addEventListener('click', requestDeviceOrientationPermission, false)
