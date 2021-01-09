@@ -28,5 +28,4 @@ function handleOrientation(event) {
   ball.style.left = (maxY*y/180 - 10) + "px";
 }
 
-while(1)
-    window.addEventListener('deviceorientation', handleOrientation);
+window.addEventListener('deviceorientation', handleOrientation,false);
