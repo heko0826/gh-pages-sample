@@ -1,0 +1,6 @@
+{
+    "short_name":"GHP-Sample",
+    "name":"GitHubPages sample app",
+    "display":"standalone",
+    "start_url":"index.html",
+}
