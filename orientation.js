@@ -8,9 +8,9 @@ function deviceOrientationRequest () {
                 alert('event is null');
                 return;
               }
-              document.getElementById('orientation_x').innerHTML = event.beta;
-              document.getElementById('orientation_y').innerHTML = event.gamma;
-              document.getElementById('orientation_z').innerHTML = event.alpha;
+              document.getElementById('orientation_x').innerHTML = Math.round(event.beta);
+              document.getElementById('orientation_y').innerHTML = Math.round(event.gamma);
+              document.getElementById('orientation_z').innerHTML = Math.round(event.alpha);
             })
           }
         })
