@@ -8,9 +8,9 @@ function deviceMotionRequest () {
                 alert('event.accelerationIncludingGravity is null');
                 return;
               }
-              document.getElementById('x').innerHTML = event.accelerationIncludingGravity.x;
-              document.getElementById('y').innerHTML = event.accelerationIncludingGravity.y;
-              document.getElementById('z').innerHTML = event.accelerationIncludingGravity.z;
+              document.getElementById('motion_x').innerHTML = event.accelerationIncludingGravity.x;
+              document.getElementById('motion_y').innerHTML = event.accelerationIncludingGravity.y;
+              document.getElementById('motion_z').innerHTML = event.accelerationIncludingGravity.z;
             })
           }
         })

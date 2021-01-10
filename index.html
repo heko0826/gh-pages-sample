@@ -6,6 +6,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script type="text/javascript" src="notify.js"></script>
         <script type="text/javascript" src="motion.js"></script>
+        <script type="text/javascript" src="orientation.js"></script>
         <link rel="manifest" href="manifest.json">
         <title>GitHubPagesSample</title>
     </head>
@@ -38,9 +39,13 @@
         </script>
         <div>
             <button onClick="deviceMotionRequest()">DeviceMotion Click</button>
-            <span id="x">0</span>
-            <span id="y">0</span>
-            <span id="z">0</span>
-          </div>
+            <p>x:<span id="motion_x">0</span></p>
+            <p>y:<span id="motion_y">0</span></p>
+            <p>z:<span id="motion_z">0</span></p>
+            <button onClick="deviceOrientationRequest()">DeviceOrientation Click</button>
+            <p>x:<span id="orientation_x">0</span></p>
+            <p>y:<span id="orientation_y">0</span></p>
+            <p>z:<span id="orientation_z">0</span></p>
+        </div>
     </body>
 </html>
